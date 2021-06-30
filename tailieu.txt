@@ -122,4 +122,4 @@ Promise.all                     xử lý đồng thời các Promise chạy riê
 let link = "G:/K8-nodemy/K13/JS/index.html";
 GetFileInfo(link);
 
-Đang test GIT HAHA 
+Đang test GIT HAHA HAHA
