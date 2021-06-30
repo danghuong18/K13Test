@@ -1,0 +1,123 @@
+var     khai bien
+Toán tử:
+== so sánh giá trị
+=== so sánh và cả kiểu dữ liệu
+
+map     đi qua từng phần tử trong array để tương tác hoặc return về 1 giá trị mới
+        kết quả trả về 1 array mới
+        cú pháp
+        var newArr = arrOriginal.map(function (element, index){return xxx})
+
+filter  hàm lọc, đi qua từng phần tử trong array gốc, kiểm tra điều kiện
+        nếu return true thì giữ, return false thì bỏ
+        array trả về nhỏ hơn hoặc bằng array gốc
+
+sort    có thay đổi array gốc
+        return a - b > 0 a trước b sau
+        return a - b < 0 b trước a sau
+        return a - b = 0 giữ nguyên
+        a - b xếp tăng dần
+        b - a xếp giảm dần
+push    thêm vào cuối array, thay đổi array gốc
+        push(...array2) thêm các phần tử mảng
+unshift thêm vào đầu array, thay đổi array gốc
+pop     xoá 1 phần tử cuối, thay đổi array gốc
+shift   xoá 1 phần tử đầu tiên, thay đổi array gốc
+splice(điểm bắt đầu, số lượng xoá, những phần tử thêm vào)
+        sửa trực tiếp array gốc
+        Đầu ra là những p.tử bị xoá
+slice(điểm đầu, điểm cuối)   cắt array hoặc chuỗi, trả về array mới mà không thay đổi array gốc
+join()  nối các phần tử trong array, cú pháp arr.join("các dấu phân cách các phần tử")
+
+
+#String Methods      
+slice()         cắt string hoặc array => cũng dùng để copy mà ko ảnh hưởng array gốc
+charAt()        trả về vị trí yêu cầu
+charCodeAt()    trả về vị trí trong đoạn mã ascii ở vị trí yêu cầu
+indexOf()       trả về vị trí đầu tiên tìm được yêu cầu
+lastIndexOf()   trả về vị trí cuối cùng tìm được yêu cầu
+startsWith()    kiểm tra kí tự đầu
+endsWith()      kiểm tra kí tự cuối
+split()         Cắt chuỗi chuyển string thành array
+replace()       Thay thế chuỗi
+toString()      Đổi kiểu dữ liệu sang String
+trim()          Bỏ khoảng trống 2 đầu
+
+#Date
+new Date()              Current Date
+new Date('YY/MM/DD')    Tạo date theo ngày nhập vào
+new Date(15091200000)   So sánh với ngày 1.1.1970
+new Date(2020, 05, 25)  Tạo timestamp
+
+#Math
+Math.round()            Làm tròn lên hoặc xuống
+Math.ceil()             Làm tròn lên
+Math.floor()            Làm tròn xuống
+Math.round()            Ngẫu nhiên 0 - 1
+Math.pow()              Hàm mũ
+Math.sqrt()             Hàm căn
+parseInt()              Chuyển đổi số Int
+parseFloat()            Chuyển đổi số Float
+xxx.toFixed(y)          Lấy y số sau dấu phẩy
+
+//Khai báo biến
+Scope                   Phạm vi, vùng có thể truy xuất dữ 1 biến
+function                Các biến khai trong function sẽ không dùng được bên ngoài kể cả var hay let
+let                     Chỉ tồn tại trong 1 block code nằm trong {}
+                        Không được phép khai trùng tên
+const                   Không được phép ghi đè
+                        Chỉ tồn tại trong 1 block code nằm trong {}
+                        Chỉ được phép thay đổi khi đó là Array hoặc Object
+var
+
+array                   sẽ được lưu theo vị trí trong bộ nhớ
+Object
+
+Object.assign({}, obj1, obj2)  dùng để copy object mà không ảnh hưởng object gốc
+                                nếu copy nhiều object mà trùng key thì nó sẽ copy object sau cùng
+
+//Hoisting                      cơ chế tự chuyển khai báo lên đầu file
+Đối vs function ten() {}        dùng được trước và sau khi khai
+Đối với let x = function() {}   chỉ dùng được sau khi khai
+Đối với (function(){})()        function vừa khai và chạy luôn 1 lần
+
+#Javascript là đơn luồng, để xử lý nó thì chúng ta dùng xử lý bất đồng bộ:
+Promise                         sẽ trả kết quả về thành công hoặc thất bại, khi thực hiện xong chức năng
+                                không chặn dòng code đằng sau nó
+                                - resolve: trả kết quả khi thành công
+                                  .then() sẽ nhận kết quả trả về từ resolve.
+                                - reject: trả kết quả thất bại, từ chối
+                                  .catch() sẽ nhận kết quả trả về từ reject.
+Promise.all                     xử lý đồng thời các Promise chạy riêng lẻ
+                                data sẽ trả về là array
+                                có thể xử lý tất cả resolve
+                                nếu tất cả Promise đều resolve thì kết quả trả về trong .then
+                                còn nếu 1 trong những Promise sai thì trả về trong .catch
+#DOM                    Là Documment Object Model
+                        Bắt DOM theo tên thẻ TagName: Bắt tất cả các thẻ cùng tên trong phạm vi
+                        Bắt DOM theo tên Class: Bắt tất cả các thẻ cùng tên trong phạm vi
+                        Bắt DOM theo tên ID: Bắt thẻ đầu tiên tìm được.
+                        querySelector: Bắt DOM theo tên thẻ, class, id trả về thẻ đầu tiên tìm được trong phạm vi
+                        querySelectorAll: Bắt DOM theo tên thẻ, class, id trả về tất cả thẻ đầu tiên tìm được trong phạm vi
+                        querySelector("tenthe")
+                        querySelector("#id")
+                        querySelector(".class")
+
+                        innerHTML: Ghi đè nội dung bên trong thẻ
+                        outerHTML: Ghi đè nội dung bên ngoài thẻ
+
+                        append("..."): Thêm nội dung vào cuối thẻ được chọn
+                        prepend("..."): Thêm nội dung vào đầu thẻ được chọn
+
+                        function GetFileInfo(url){
+    let stringArr = url.split('/');
+    // console.log(stringArr);
+    let fileName = stringArr[stringArr.length - 1];
+    console.log("Tên file là: ", fileName);
+    let splitName = fileName.split('.');
+    let format = splitName[splitName.length - 1];
+    console.log("Đuôi file: ", format);
+}
+
+let link = "G:/K8-nodemy/K13/JS/index.html";
+GetFileInfo(link);
